@@ -7,6 +7,19 @@ import Link from "next/link";
 export default function Hero() {
   const sectionRef = useRef(null);
 
+  const handleScrollToProblem = () => {
+    const problemSection = document.getElementById("problem");
+
+    if (!problemSection) {
+      return;
+    }
+
+    problemSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -319,20 +332,24 @@ export default function Hero() {
           }}>
             Scroll
           </span>
-          <a
-            href="#problem"
+          <button
+            type="button"
             aria-label="Scroll to next section"
+            onClick={handleScrollToProblem}
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "flex-start",
               paddingTop: "6px",
-              width: "24px",
-              height: "38px",
+              width: "40px",
+              height: "54px",
               borderRadius: "12px",
               border: "1.5px solid #1A3048",
-              textDecoration: "none",
+              background: "transparent",
+              cursor: "pointer",
               transition: "border-color 0.2s ease",
+              position: "relative",
+              zIndex: 2,
             }}
             onMouseEnter={(e) => e.currentTarget.style.borderColor = "#1565C0"}
             onMouseLeave={(e) => e.currentTarget.style.borderColor = "#1A3048"}
@@ -343,7 +360,7 @@ export default function Hero() {
               borderRadius: "2px",
               background: "#506A84",
             }} />
-          </a>
+          </button>
         </div>
       </div>
 
