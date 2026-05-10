@@ -90,19 +90,6 @@ export default function Features() {
               not just one tool.
             </h2>
           </div>
-
-          <p
-            className="section-sub"
-            style={{
-              color: "#2C4A6E",
-              maxWidth: "40rem",
-              margin: 0,
-            }}
-          >
-            On the homepage, `Features` should explain what the platform actually does.
-            This section gives one clear landing target for the product story across owners,
-            operations teams, multi-zone operators, and drivers.
-          </p>
         </div>
 
         <div
