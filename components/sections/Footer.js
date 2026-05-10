@@ -1,32 +1,34 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   Product: [
-    { label: "How It Works",   href: "/#how-it-works",   external: false },
-    { label: "Parking Types",  href: "/#parking-types",  external: false },
-    { label: "For Partners",   href: "/partners",         external: false },
-    { label: "Find Parking",   href: "/find-parking",    external: false },
-    { label: "Download App",   href: "https://play.google.com/store", external: true },
+    { label: "How It Works",  href: "/#how-it-works",                external: false },
+    { label: "Parking Types", href: "/#parking-types",               external: false },
+    { label: "For Partners",  href: "/partners",                     external: false },
+    { label: "Find Parking",  href: "/find-parking",                 external: false },
+    { label: "Download App",  href: "https://play.google.com/store", external: true  },
+    { label: "YAdmin",        href: "/yadmin",                       external: false },
   ],
   Company: [
-    { label: "Prothom Analytica", href: "https://prothomai.com", external: true },
-    { label: "About",             href: "https://prothomai.com/about", external: true },
+    { label: "Prothom Analytica", href: "https://prothomai.com",          external: true },
+    { label: "About",             href: "https://prothomai.com/about",    external: true },
     { label: "Insights",          href: "https://prothomai.com/insights", external: true },
-    { label: "Contact",           href: "https://prothomai.com/#contact", external: true },
+    { label: "Contact",           href: "https://prothomai.com/contact", external: true },
   ],
   Legal: [
-    { label: "Privacy Policy",  href: "/privacy",  external: false },
+    { label: "Privacy Policy",   href: "/privacy", external: false },
     { label: "Terms of Service", href: "/terms",   external: false },
+    { label: "Cookie Policy",    href: "/cookie-policy", external: false },
   ],
 };
 
 const socials = [
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/company/prothom-analytica-india",
+    href: "https://www.linkedin.com/in/prothom-ai-3432b6408/?isSelfProfile=true",
     icon: (
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -59,42 +61,6 @@ const socials = [
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [subStatus, setSubStatus] = useState("idle");
-  const [subError, setSubError] = useState("");
-
-  const handleSubscribe = async () => {
-    if (!email) {
-      setSubError("Please enter your email.");
-      return;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setSubError("Please enter a valid email.");
-      return;
-    }
-    setSubStatus("loading");
-    setSubError("");
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setSubError(data.error || "Something went wrong.");
-        setSubStatus("idle");
-        return;
-      }
-      setSubStatus("success");
-      setEmail("");
-    } catch {
-      setSubError("Something went wrong. Please try again.");
-      setSubStatus("idle");
-    }
-  };
-
   return (
     <footer
       style={{
@@ -120,75 +86,58 @@ export default function Footer() {
         style={{ position: "relative", zIndex: 1 }}
       >
 
-        {/* ── Top ── */}
+        {/* ── Brand row ── */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: "3rem",
+            display: "flex",
+            flexDirection: "column",
+            gap: "1rem",
             padding: "4rem 0 3rem",
             borderBottom: "1px solid #1A3048",
           }}
-          className="footer-top"
         >
-          {/* Brand */}
-          <div>
-            {/* Logo */}
-            <Link
-              href="/"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                textDecoration: "none",
-                marginBottom: "1rem",
-              }}
-            >
-              <div style={{
-                width: "32px",
-                height: "32px",
-                borderRadius: "8px",
-                background: "#1565C0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "15px",
-                color: "white",
-                flexShrink: 0,
-              }}>
-                Y
-              </div>
-              <span style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "17px",
-                color: "#E8F4FD",
-                letterSpacing: "-0.5px",
-              }}>
-                Park
-              </span>
-            </Link>
+          {/* Logo */}
+          <Link
+            href="/"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              textDecoration: "none",
+            }}
+          >
+            <Image
+              src="/YparkWhite.png"
+              alt="YPark Logo"
+              width={110}
+              height={40}
+              style={{ objectFit: "contain", height: "auto" }}
+            />
+          </Link>
 
+          {/* Tagline + socials row */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "1.5rem",
+            }}
+          >
             <p style={{
               fontSize: "0.82rem",
               color: "#506A84",
               lineHeight: 1.75,
-              maxWidth: "260px",
+              maxWidth: "300px",
               fontFamily: "'DM Sans', sans-serif",
-              marginBottom: "1.5rem",
+              margin: 0,
             }}>
               India&apos;s organized parking marketplace.
-              Connecting owners and drivers through
-              one platform.
+              Connecting owners and drivers through one platform.
             </p>
 
             {/* Socials */}
-            <div style={{
-              display: "flex",
-              gap: "0.5rem",
-            }}>
+            <div style={{ display: "flex", gap: "0.5rem" }}>
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -222,101 +171,6 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <div style={{
-              fontSize: "0.65rem",
-              fontWeight: 700,
-              color: "#00BCD4",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              marginBottom: "0.625rem",
-              fontFamily: "'DM Sans', sans-serif",
-            }}>
-              Stay Updated
-            </div>
-            <div style={{
-              fontSize: "0.95rem",
-              fontWeight: 700,
-              color: "#E8F4FD",
-              marginBottom: "0.375rem",
-              fontFamily: "'DM Sans', sans-serif",
-            }}>
-              Get updates from YPark.
-            </div>
-            <div style={{
-              fontSize: "0.8rem",
-              color: "#506A84",
-              fontFamily: "'DM Sans', sans-serif",
-              marginBottom: "1.25rem",
-              lineHeight: 1.6,
-            }}>
-              New cities, new features, app launch.
-              No spam. Ever.
-            </div>
-
-            {subStatus === "success" ? (
-              <div style={{
-                padding: "0.875rem 1rem",
-                borderRadius: "0.75rem",
-                background: "rgba(46,125,50,0.08)",
-                border: "1px solid rgba(46,125,50,0.2)",
-                fontSize: "0.82rem",
-                color: "#4CAF50",
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600,
-              }}>
-                ✓ Subscribed. We will be in touch.
-              </div>
-            ) : (
-              <>
-                <div style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  flexWrap: "wrap",
-                }}>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => {
-                      setEmail(e.target.value);
-                      setSubError("");
-                    }}
-                    placeholder="your@email.com"
-                    className="input"
-                    style={{ flex: 1, minWidth: "160px" }}
-                  />
-                  <button
-                    onClick={handleSubscribe}
-                    disabled={subStatus === "loading"}
-                    className="btn-primary"
-                    style={{
-                      opacity: subStatus === "loading" ? 0.7 : 1,
-                      cursor: subStatus === "loading"
-                        ? "not-allowed"
-                        : "pointer",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {subStatus === "loading" ? (
-                      <span className="spinner" />
-                    ) : "Subscribe"}
-                  </button>
-                </div>
-                {subError && (
-                  <div style={{
-                    fontSize: "0.75rem",
-                    color: "#C0392B",
-                    marginTop: "0.5rem",
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}>
-                    {subError}
-                  </div>
-                )}
-              </>
-            )}
           </div>
         </div>
 
@@ -370,16 +224,7 @@ export default function Footer() {
                       onMouseLeave={(e) => e.currentTarget.style.color = "#8BA8C8"}
                     >
                       {link.label}
-                      <svg
-                        width="9" height="9"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
-                      >
+                      <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
@@ -409,7 +254,7 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* ── Bottom ── */}
+        {/* ── Bottom bar ── */}
         <div style={{
           display: "flex",
           alignItems: "center",
@@ -418,6 +263,7 @@ export default function Footer() {
           gap: "1rem",
           padding: "1.5rem 0",
         }}>
+
           {/* Copyright */}
           <div style={{
             fontSize: "0.72rem",
@@ -425,8 +271,7 @@ export default function Footer() {
             fontFamily: "'DM Sans', sans-serif",
             lineHeight: 1.6,
           }}>
-            © {new Date().getFullYear()} YPark.
-            A product of{" "}
+            © {new Date().getFullYear()} YPark. A product of{" "}
             <a
               href="https://prothomai.com"
               target="_blank"
@@ -451,8 +296,9 @@ export default function Footer() {
             gap: "1.5rem",
           }}>
             {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms of Service", href: "/terms" },
+              { label: "Privacy Policy",   href: "/privacy" },
+              { label: "Terms of Service", href: "/terms"   },
+              { label: "Cookie Policy",    href: "/cookie-policy" },
             ].map((item) => (
               <Link
                 key={item.label}
@@ -481,20 +327,11 @@ export default function Footer() {
             alignItems: "center",
             gap: "0.25rem",
           }}>
-            Made with
-            <span style={{ color: "#C0392B" }}> ♥ </span>
-            in India
+            Made with <span style={{ color: "#C0392B" }}> ♥ </span> in India
           </div>
         </div>
-      </div>
 
-      <style>{`
-        @media (min-width: 768px) {
-          .footer-top {
-            grid-template-columns: 1fr 1fr !important;
-          }
-        }
-      `}</style>
+      </div>
     </footer>
   );
 }

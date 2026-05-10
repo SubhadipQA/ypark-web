@@ -130,7 +130,7 @@ export default function Problem() {
       <div className="section-wrap section-pad">
 
         {/* ── Header ── */}
-        <div style={{ marginBottom: "3.5rem" }}>
+        <div style={{ marginBottom: "2.25rem" }}>
           <span className="section-label">The Problem</span>
           <h2 className="section-heading">
             Parking in Indian cities
@@ -150,7 +150,7 @@ export default function Problem() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
             gap: "1rem",
-            marginBottom: "3.5rem",
+            marginBottom: "2.25rem",
           }}
         >
           {problems.map((p, i) => (

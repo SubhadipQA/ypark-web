@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/sections/Navbar";
+import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
@@ -18,6 +20,7 @@ export default function PartnersPage() {
       <HowItWorks />
       <Features />
       <AppDownload />
+      <FAQ />
       <Footer />
     </main>
   );
@@ -31,8 +34,8 @@ function PartnersHero() {
     <section
       style={{
         background: "#0D1B2A",
-        paddingTop: "9rem",
-        paddingBottom: "5rem",
+        paddingTop: "7rem",
+        paddingBottom: "3.5rem",
         borderBottom: "1px solid #1A3048",
         position: "relative",
         overflow: "hidden",
@@ -193,110 +196,31 @@ function PartnersHero() {
             </div>
           </div>
 
-          {/* Right — two zone type cards */}
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "1rem",
-          }}>
-            {[
-              {
-                icon: "🛣️",
-                title: "Govt Authorized",
-                sub: "Street bays, roadside zones",
-                points: [
-                  "Walk-in tracking",
-                  "Monthly passes",
-                  "Cash & UPI",
-                  "Staff logging",
-                ],
-                color: "#F57F17",
-                href: "#parking-types",
-              },
-              {
-                icon: "🏢",
-                title: "Private Parking",
-                sub: "Buildings, compounds, societies",
-                points: [
-                  "Walk-in tracking",
-                  "Monthly passes",
-                  "Cash, UPI & card",
-                  "Numbered spaces",
-                ],
-                color: "#1565C0",
-                href: "#parking-types",
-              },
-            ].map((zone) => (
-              <a
-                key={zone.title}
-                href={zone.href}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                  padding: "1.25rem",
-                  background: "#132236",
-                  border: "1px solid #1A3048",
-                  borderLeft: `3px solid ${zone.color}`,
-                  borderRadius: "1rem",
-                  textDecoration: "none",
-                  transition: "border-color 0.2s ease",
-                }}
-              >
-                <div>
-                  <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>
-                    {zone.icon}
-                  </div>
-                  <div style={{
-                    fontSize: "0.875rem",
-                    fontWeight: 700,
-                    color: "#E8F4FD",
-                    marginBottom: "0.2rem",
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}>
-                    {zone.title}
-                  </div>
-                  <div style={{
-                    fontSize: "0.72rem",
-                    color: "#506A84",
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}>
-                    {zone.sub}
-                  </div>
-                </div>
-                <div style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "0.375rem",
-                }}>
-                  {zone.points.map((point) => (
-                    <div
-                      key={point}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                      }}
-                    >
-                      <div style={{
-                        width: "4px",
-                        height: "4px",
-                        borderRadius: "9999px",
-                        background: "#506A84",
-                        flexShrink: 0,
-                      }} />
-                      <span style={{
-                        fontSize: "0.75rem",
-                        color: "#8BA8C8",
-                        fontFamily: "'DM Sans', sans-serif",
-                      }}>
-                        {point}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </a>
-            ))}
+          {/* Right — hero image */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                maxWidth: "560px",
+                aspectRatio: "10 / 9",
+              }}
+            >
+              <Image
+                src="/partner-hero.png"
+                alt="YPark partner app preview"
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                style={{ objectFit: "contain" }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -347,8 +271,8 @@ function WhoIsItFor() {
     <section
       id="who-is-it-for"
       style={{
-        background: "#0F2136",
-        borderTop: "1px solid #1A3048",
+        background: "linear-gradient(135deg, #EBF1FF 0%, #F5F8FF 50%, #EEF3FF 100%)",
+        borderTop: "1px solid #D6E4FF",
         position: "relative",
         overflow: "hidden",
       }}
@@ -359,7 +283,7 @@ function WhoIsItFor() {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          opacity: 0.4,
+          opacity: 0.18,
         }}
       />
 
@@ -369,7 +293,7 @@ function WhoIsItFor() {
           marginBottom: "3.5rem",
         }}>
           <span className="section-label">Who Is It For</span>
-          <h2 className="section-heading">
+          <h2 className="section-heading" style={{ color: "#0D1B2A" }}>
             If you manage parking in India,
             <br />
             YPark is for you.
@@ -385,8 +309,8 @@ function WhoIsItFor() {
             <div
               key={i}
               style={{
-                background: "#132236",
-                border: "1px solid #1A3048",
+                background: "#FFFFFF",
+                border: "1px solid #D6E4FF",
                 borderTop: `2px solid ${type.color}`,
                 borderRadius: "1rem",
                 padding: "1.5rem",
@@ -402,7 +326,7 @@ function WhoIsItFor() {
                 <div style={{
                   fontSize: "0.95rem",
                   fontWeight: 700,
-                  color: "#E8F4FD",
+                  color: "#0D1B2A",
                   marginBottom: "0.5rem",
                   fontFamily: "'DM Sans', sans-serif",
                 }}>
@@ -410,7 +334,7 @@ function WhoIsItFor() {
                 </div>
                 <div style={{
                   fontSize: "0.82rem",
-                  color: "#8BA8C8",
+                  color: "#2C4A6E",
                   lineHeight: 1.7,
                   fontFamily: "'DM Sans', sans-serif",
                 }}>
@@ -915,8 +839,8 @@ function HowItWorks() {
     <section
       id="how-it-works"
       style={{
-        background: "#132236",
-        borderTop: "1px solid #1A3048",
+        background: "linear-gradient(135deg, #EBF1FF 0%, #F5F8FF 50%, #EEF3FF 100%)",
+        borderTop: "1px solid #D6E4FF",
         position: "relative",
         overflow: "hidden",
       }}
@@ -927,7 +851,7 @@ function HowItWorks() {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          opacity: 0.35,
+          opacity: 0.18,
         }}
       />
 
@@ -937,12 +861,13 @@ function HowItWorks() {
           marginBottom: "3.5rem",
         }}>
           <span className="section-label">How It Works</span>
-          <h2 className="section-heading">
+          <h2 className="section-heading" style={{ color: "#0D1B2A" }}>
             Four steps to go live.
           </h2>
           <p className="section-sub" style={{
             margin: "1rem auto 0",
             textAlign: "center",
+            color: "#2C4A6E",
           }}>
             No technical knowledge needed.
             No hardware to install.
@@ -954,8 +879,8 @@ function HowItWorks() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
             gap: "0",
-            background: "#0D1B2A",
-            border: "1px solid #1A3048",
+            background: "#FFFFFF",
+            border: "1px solid #D6E4FF",
             borderRadius: "1.25rem",
             overflow: "hidden",
             marginBottom: "3rem",
@@ -967,7 +892,7 @@ function HowItWorks() {
               key={i}
               style={{
                 padding: "2rem 1.5rem",
-                borderRight: "1px solid #1A3048",
+                borderRight: "1px solid #E5EEFA",
                 borderBottom: "none",
                 transition: "background 0.2s ease",
                 cursor: "default",
@@ -980,7 +905,7 @@ function HowItWorks() {
                 fontFamily: "'DM Mono', monospace",
                 fontSize: "0.68rem",
                 fontWeight: 700,
-                color: "#506A84",
+                color: "#00BCD4",
                 letterSpacing: "0.1em",
                 marginBottom: "1rem",
               }}>
@@ -992,7 +917,7 @@ function HowItWorks() {
                 display: "inline-block",
                 fontSize: "0.6rem",
                 fontWeight: 700,
-                color: "#506A84",
+                color: "#6B829C",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 marginBottom: "0.625rem",
@@ -1005,7 +930,7 @@ function HowItWorks() {
               <h3 style={{
                 fontSize: "0.9rem",
                 fontWeight: 700,
-                color: "#E8F4FD",
+                color: "#0D1B2A",
                 marginBottom: "0.5rem",
                 lineHeight: 1.3,
                 fontFamily: "'DM Sans', sans-serif",
@@ -1016,7 +941,7 @@ function HowItWorks() {
               {/* Desc */}
               <p style={{
                 fontSize: "0.78rem",
-                color: "#8BA8C8",
+                color: "#2C4A6E",
                 lineHeight: 1.7,
                 margin: 0,
                 fontFamily: "'DM Sans', sans-serif",
@@ -1050,7 +975,7 @@ function HowItWorks() {
         @media (max-width: 767px) {
           .step-item {
             border-right: none !important;
-            border-bottom: 1px solid #1A3048 !important;
+            border-bottom: 1px solid #E5EEFA !important;
           }
           .step-item:last-child {
             border-bottom: none !important;
@@ -1242,8 +1167,8 @@ function AppDownload() {
   return (
     <section
       style={{
-        background: "#132236",
-        borderTop: "1px solid #1A3048",
+        background: "linear-gradient(135deg, #EBF1FF 0%, #F5F8FF 50%, #EEF3FF 100%)",
+        borderTop: "1px solid #D6E4FF",
         position: "relative",
         overflow: "hidden",
       }}
@@ -1254,7 +1179,7 @@ function AppDownload() {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          opacity: 0.35,
+          opacity: 0.18,
         }}
       />
 
@@ -1269,14 +1194,14 @@ function AppDownload() {
           margin: "0 auto",
         }}>
           <span className="section-label">Get Started</span>
-          <h2 className="section-heading">
+          <h2 className="section-heading" style={{ color: "#0D1B2A" }}>
             Download YPark.
             <br />
             Your zone live in 24 hours.
           </h2>
           <p style={{
             fontSize: "0.95rem",
-            color: "#8BA8C8",
+            color: "#2C4A6E",
             lineHeight: 1.8,
             fontFamily: "'DM Sans', sans-serif",
           }}>
@@ -1341,7 +1266,7 @@ function AppDownload() {
             <Link
               href="/find-parking"
               style={{
-                color: "#77A7DF",
+                color: "#1565C0",
                 textDecoration: "none",
                 fontWeight: 600,
                 transition: "color 0.2s ease",
@@ -1355,7 +1280,7 @@ function AppDownload() {
           <div style={{
             width: "100%",
             height: "1px",
-            background: "#1A3048",
+            background: "#D6E4FF",
           }} />
 
           {/* Company credit */}
@@ -1370,7 +1295,7 @@ function AppDownload() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "#77A7DF",
+                color: "#1565C0",
                 textDecoration: "none",
                 fontWeight: 600,
                 transition: "color 0.2s ease",

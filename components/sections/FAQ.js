@@ -10,12 +10,13 @@ function FAQItem({ faq }) {
   return (
     <div
       style={{
-        background: "#132236",
+        background: "#FFFFFF",
         border: "1px solid",
-        borderColor: open ? "#1E3A5F" : "#1A3048",
+        borderColor: open ? "#A9C8F5" : "#D6E4FF",
         borderRadius: "0.875rem",
         overflow: "hidden",
-        transition: "border-color 0.2s ease",
+        boxShadow: "0 10px 28px rgba(13, 27, 42, 0.05)",
+        transition: "border-color 0.2s ease, box-shadow 0.2s ease",
       }}
     >
       {/* Question */}
@@ -38,7 +39,7 @@ function FAQItem({ faq }) {
         <span style={{
           fontSize: "0.9rem",
           fontWeight: 600,
-          color: "#E8F4FD",
+          color: "#0D1B2A",
           fontFamily: "'DM Sans', sans-serif",
           lineHeight: 1.4,
           flex: 1,
@@ -51,20 +52,20 @@ function FAQItem({ faq }) {
           width: "24px",
           height: "24px",
           borderRadius: "9999px",
-          border: "1px solid #1A3048",
+          border: "1px solid #D6E4FF",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
           transition: "border-color 0.2s ease, transform 0.3s ease",
           transform: open ? "rotate(45deg)" : "rotate(0deg)",
-          borderColor: open ? "#1565C0" : "#1A3048",
+          borderColor: open ? "#00BCD4" : "#D6E4FF",
         }}>
           <svg
             width="10" height="10"
             viewBox="0 0 24 24"
             fill="none"
-            stroke={open ? "#77A7DF" : "#506A84"}
+            stroke={open ? "#00BCD4" : "#2C4A6E"}
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -84,12 +85,12 @@ function FAQItem({ faq }) {
       }}>
         <div style={{
           padding: "0 1.5rem 1.25rem",
-          borderTop: "1px solid #1A3048",
+          borderTop: "1px solid #E6EEFB",
           paddingTop: "1rem",
         }}>
           <p style={{
             fontSize: "0.85rem",
-            color: "#8BA8C8",
+            color: "#2C4A6E",
             lineHeight: 1.8,
             fontFamily: "'DM Sans', sans-serif",
             margin: 0,
@@ -107,8 +108,8 @@ export default function FAQ() {
     <section
       id="faq"
       style={{
-        background: "#0D1B2A",
-        borderTop: "1px solid #1A3048",
+        background: "#EBF1FF",
+        borderTop: "1px solid #D6E4FF",
         position: "relative",
         overflow: "hidden",
       }}
@@ -120,7 +121,7 @@ export default function FAQ() {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          opacity: 0.4,
+          opacity: 0.18,
         }}
       />
 
@@ -130,16 +131,17 @@ export default function FAQ() {
         <div
           style={{
             textAlign: "center",
-            marginBottom: "4rem",
+            marginBottom: "2.5rem",
           }}
         >
           <span className="section-label">FAQ</span>
-          <h2 className="section-heading">
+          <h2 className="section-heading" style={{ color: "#0D1B2A" }}>
             Questions we get asked.
           </h2>
           <p className="section-sub" style={{
             margin: "1rem auto 0",
             textAlign: "center",
+            color: "#2C4A6E",
           }}>
             Everything a parking owner needs to know
             before getting started with YPark.
@@ -152,7 +154,7 @@ export default function FAQ() {
             display: "grid",
             gridTemplateColumns: "1fr",
             gap: "3rem",
-            marginBottom: "3.5rem",
+            marginBottom: "2.25rem",
           }}
           className="faq-grid"
         >
@@ -174,7 +176,7 @@ export default function FAQ() {
               <span style={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
-                color: "#506A84",
+                color: "#00BCD4",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 fontFamily: "'DM Sans', sans-serif",
@@ -211,7 +213,7 @@ export default function FAQ() {
               <span style={{
                 fontSize: "0.72rem",
                 fontWeight: 700,
-                color: "#506A84",
+                color: "#00BCD4",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 fontFamily: "'DM Sans', sans-serif",
@@ -228,60 +230,17 @@ export default function FAQ() {
                 <FAQItem key={i} faq={faq} index={i} />
               ))}
             </div>
-
-            {/* Notify me card below driver FAQs */}
-            <div style={{
-              marginTop: "1rem",
-              background: "#132236",
-              border: "1px solid #1A3048",
-              borderRadius: "0.875rem",
-              padding: "1.25rem 1.5rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "1rem",
-              flexWrap: "wrap",
-            }}>
-              <div>
-                <div style={{
-                  fontSize: "0.82rem",
-                  fontWeight: 700,
-                  color: "#E8F4FD",
-                  fontFamily: "'DM Sans', sans-serif",
-                  marginBottom: "0.2rem",
-                }}>
-                  Want to know when driver app launches?
-                </div>
-                <div style={{
-                  fontSize: "0.75rem",
-                  color: "#506A84",
-                  fontFamily: "'DM Sans', sans-serif",
-                }}>
-                  Leave your number and we will notify you.
-                </div>
-              </div>
-              <Link
-                href="/find-parking"
-                className="btn-secondary"
-                style={{
-                  fontSize: "0.8rem",
-                  padding: "0.5rem 1rem",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                Notify Me
-              </Link>
-            </div>
           </div>
         </div>
 
         {/* ── Still have questions ── */}
         <div
           style={{
-            background: "#132236",
-            border: "1px solid #1A3048",
+            background: "#FFFFFF",
+            border: "1px solid #D6E4FF",
             borderRadius: "1.25rem",
             padding: "2rem",
+            boxShadow: "0 12px 36px rgba(13, 27, 42, 0.06)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -293,7 +252,7 @@ export default function FAQ() {
             <div style={{
               fontSize: "1rem",
               fontWeight: 700,
-              color: "#E8F4FD",
+              color: "#0D1B2A",
               marginBottom: "0.375rem",
               fontFamily: "'DM Sans', sans-serif",
             }}>
@@ -301,7 +260,7 @@ export default function FAQ() {
             </div>
             <div style={{
               fontSize: "0.85rem",
-              color: "#8BA8C8",
+              color: "#2C4A6E",
               fontFamily: "'DM Sans', sans-serif",
             }}>
               We respond to every message within 24 hours.

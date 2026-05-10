@@ -132,14 +132,14 @@ button {
 @media (min-width: 1024px) { .section-wrap { padding: 0 3rem; } }
 
 .section-pad {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
 }
-@media (min-width: 768px) { .section-pad { padding: 7rem 0; } }
+@media (min-width: 768px) { .section-pad { padding: 3.5rem 0; } }
 
 .section-pad-hero {
-  padding-top: 8rem;
+  padding-top: 5.5rem;
 }
-@media (min-width: 768px) { .section-pad-hero { padding-top: 8.5rem; } }
+@media (min-width: 768px) { .section-pad-hero { padding-top: 6.25rem; } }
 
 /* ════════════════════════════════
    TYPOGRAPHY
@@ -209,7 +209,7 @@ button {
   border-radius: 0.75rem;
   font-weight: 600;
   font-size: 0.875rem;
-  color: #E8F4FD;
+  color: #1565C0;
   background: transparent;
   border: 1px solid #1A3048;
   transition: border-color 0.2s ease, background 0.2s ease;

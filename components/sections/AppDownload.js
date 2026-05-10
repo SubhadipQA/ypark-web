@@ -29,7 +29,7 @@ export default function AppDownload() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr",
-            gap: "4rem",
+            gap: "2.5rem",
             alignItems: "center",
           }}
           className="download-grid"

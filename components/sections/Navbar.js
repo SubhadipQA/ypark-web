@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { navLinks } from "@/lib/constants";
+import Image from "next/image";
 
 function NavItem({ href, children, onClick, style, ...props }) {
   if (href.startsWith("#")) {
@@ -70,32 +71,12 @@ export default function Navbar() {
                 textDecoration: "none",
               }}
             >
-              <div style={{
-                width: "34px",
-                height: "34px",
-                borderRadius: "9px",
-                background: "#1565C0",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "16px",
-                color: "white",
-                flexShrink: 0,
-                letterSpacing: "-0.5px",
-              }}>
-                Y
-              </div>
-              <span style={{
-                fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 800,
-                fontSize: "18px",
-                color: "#E8F4FD",
-                letterSpacing: "-0.5px",
-              }}>
-                Park
-              </span>
+              <Image
+                src="/YparkWhite.png"
+                alt="YPark Logo"
+                width={120}
+                height={120}
+              />
             </Link>
 
             {/* ── Desktop Nav ── */}

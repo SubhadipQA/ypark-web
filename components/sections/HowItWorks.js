@@ -95,7 +95,7 @@ export default function HowItWorks() {
             display: "grid",
             gridTemplateColumns: "1fr",
             gap: "2rem",
-            marginBottom: "4rem",
+            marginBottom: "2.5rem",
             alignItems: "end",
           }}
           className="hiw-header"

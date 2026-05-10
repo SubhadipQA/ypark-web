@@ -1,262 +1,359 @@
 # YPark Project Guide
 
-This file is a working guide for the YPark web project.
+This document explains how the YPark web project is structured, what each page is responsible for, and where someone should make changes without needing to reverse-engineer the whole codebase first.
 
-The goal is simple:
+The goal of this file is practical clarity:
 
-- help any developer understand what has already been built
-- show how pages and sections are connected
-- explain where content and styling should be modified
-- reduce confusion when future changes are needed
+- what the site is
+- what routes exist
+- how the homepage is composed
+- where styling lives
+- where content lives
+- what parts are still incomplete
 
-## 1. Project Summary
+## 1. Project Purpose
 
-YPark Web is a Next.js App Router project used as a marketing and product site for YPark.
+YPark Web is the public-facing marketing and product website for YPark.
 
-The current site covers:
+The site currently serves four main purposes:
 
-- the main landing page
-- a dedicated partners / parking owners page
-- legal pages for privacy and terms
-- newsletter subscription flow
-- placeholder support for future contact, notify, and driver-facing flows
+1. explain YPark to parking owners and operators
+2. present YAdmin as the multi-zone operating layer
+3. prepare the driver-facing story for future rollout
+4. provide legal pages and a working newsletter subscription flow
 
-## 2. Core Stack
+This is not a dashboard app. It is a branded marketing site built with App Router pages and section-based landing content.
+
+## 2. Current Stack
 
 - Next.js 16 App Router
 - React 19
 - ESLint 9
-- Tailwind CSS 4
+- Tailwind CSS 4 integration
 - `next/font` for DM Sans and DM Mono
+- Resend for newsletter emails
 
-Main global layout and metadata are defined in `/app/layout.tsx`.
+Global fonts, metadata, and document shell setup live in `app/layout.tsx`.
 
-## 3. Current Route Structure
+## 3. High-Level Route Map
 
-### Main routes
+### Public pages
 
-- `/` → homepage
-- `/partners` → parking owners / partner page
-- `/find-parking` → currently exists but is still empty / placeholder
-- `/privacy` → privacy policy page
-- `/terms` → terms of service page
+- `/` homepage
+- `/partners` parking owner / partner landing page
+- `/yadmin` multi-zone admin landing page
+- `/find-parking` coming-soon page for drivers
+- `/privacy` privacy policy
+- `/terms` terms of service
+- `/cookie-policy` cookie policy
 
 ### API routes
 
-- `/api/subscribe` → active and used by the footer newsletter form
-- `/api/contact` → file exists but currently empty
-- `/api/notify` → file exists but currently empty
+- `/api/subscribe` implemented and active
+- `/api/contact` file exists but is empty
+- `/api/notify` file exists but is empty
 
 ## 4. Homepage Structure
 
-Homepage file:
+Homepage route file:
 
-- `/app/page.js`
+- `app/page.js`
 
-Current homepage order:
+The homepage is assembled from extracted section components.
+
+Current order:
 
 1. `Navbar`
 2. `Hero`
 3. `Problem`
 4. `ForOwners`
 5. `HowItWorks`
-6. `AppDownload`
-7. `FAQ`
-8. `Footer`
+6. `Features`
+7. `AppDownload`
+8. `FAQ`
+9. `Footer`
 
-These are imported from:
+These sections come from `components/sections/`.
 
-- `/components/sections/Navbar.js`
-- `/components/sections/Hero.js`
-- `/components/sections/Problem.js`
-- `/components/sections/ForOwners.js`
-- `/components/sections/HowItWorks.js`
-- `/components/sections/AppDownload.js`
-- `/components/sections/FAQ.js`
-- `/components/sections/Footer.js`
+Important note:
 
-## 5. Section Files In `components/sections`
+The navbar contains anchor links such as:
 
-### Active section files
+- `#how-it-works`
+- `#features`
+- `#faq`
+
+If someone changes or removes a homepage section, they also need to verify that the matching `id` still exists. Otherwise the nav will appear broken.
+
+## 5. Components And Section Files
+
+Main section directory:
+
+- `components/sections/`
+
+Current files:
 
 - `Navbar.js`
 - `Hero.js`
 - `Problem.js`
 - `ForOwners.js`
 - `HowItWorks.js`
+- `Features.js`
+- `AppDownload.js`
+- `FAQ.js`
+- `Footer.js`
+- `Cities.js`
+- `ForDrivers.js`
+
+### What is actively used on the homepage
+
+Used now:
+
+- `Navbar.js`
+- `Hero.js`
+- `Problem.js`
+- `ForOwners.js`
+- `HowItWorks.js`
+- `Features.js`
 - `AppDownload.js`
 - `FAQ.js`
 - `Footer.js`
 
-### Existing but currently unused / incomplete section files
+Currently not wired into the homepage:
 
 - `Cities.js`
 - `ForDrivers.js`
 
-These files exist, but the homepage currently does not import them.
-
-If someone wants to add them later, they must:
-
-1. complete the section file content
-2. import the section into `/app/page.js`
-3. insert it into the homepage order
-4. verify navigation anchor links if needed
+Those two files exist as possible future sections, but they are not currently part of the live homepage flow.
 
 ## 6. Partners Page Structure
 
-Partners page file:
+Partners page route:
 
-- `/app/partners/page.js`
+- `app/partners/page.js`
 
-Important note:
+This page is not composed from many extracted section files. Instead, it is mostly one large route file with multiple internal section functions.
 
-Unlike the homepage, the partners page is mostly built as one large file with multiple local section functions inside the same file.
+Current page shape:
 
-Current high-level partners page structure:
+1. hero
+2. who it is for
+3. parking types
+4. how it works
+5. features
+6. app download
+7. FAQ
+8. footer
 
-1. `Navbar`
-2. `PartnersHero`
-3. `WhoIsItFor`
-4. `ParkingTypes`
-5. `HowItWorks`
-6. `Features`
-7. `AppDownload`
-8. `Footer`
+Practical rule:
 
-This means future changes to the partners page should usually be made directly in:
+If a change is specific to the Partners page, check `app/partners/page.js` first, not `components/sections/`.
 
-- `/app/partners/page.js`
+## 7. YAdmin Page Structure
 
-Do not look in `/components/sections` first for those partner-specific subsections, because they are currently inlined inside the route file.
+YAdmin route:
 
-## 7. Legal Pages Structure
+- `app/yadmin/page.js`
 
-### Privacy page
+Like the Partners page, YAdmin is mostly an in-route page with local section functions rather than many extracted shared components.
 
-- `/app/privacy/page.js`
+Current page shape:
 
-### Terms page
+1. hero
+2. who it is for
+3. what it does / features
+4. how it works
+5. request demo CTA
+6. FAQ
+7. footer
 
-- `/app/terms/page.js`
+This route is focused on multi-zone operators, parking companies, and government-style operations.
 
-Both legal pages currently contain:
+## 8. Legal Page Structure
 
-- route-level metadata
-- a legal hero section
-- main content body
-- sidebar with legal links and contact block
-- shared helper components inside the same file, such as:
-  - `LegalHero`
-  - `LegalBody`
-  - `LegalSection`
-  - `LegalP`
-  - `LegalList`
+Legal routes:
+
+- `app/privacy/page.js`
+- `app/terms/page.js`
+- `app/cookie-policy/page.js`
+
+These pages follow the same general structure:
+
+- dark hero area
+- light main body section
+- sidebar with legal document links and contact/help block
+- repeated helper components defined inside the file
+
+Examples of repeated helper patterns:
+
+- `LegalHero`
+- `LegalBody`
+- `LegalSection`
+- `LegalP`
+- `LegalList`
 
 Important maintenance note:
 
-The privacy page and terms page currently duplicate a lot of structure.
+These legal pages duplicate a lot of layout logic. If someone plans a major redesign, it would be worth extracting a shared legal layout component. For normal copy updates, editing each page directly is faster and safer.
 
-If legal pages need bigger design changes later, a good refactor would be:
+## 9. Shared Styling System
 
-1. move shared legal layout into a reusable component file
-2. keep only the page-specific content inside each route page
+Global styling file:
 
-## 8. Shared Styling System
+- `app/globals.css`
 
-Global styles live in:
+The project uses a hybrid styling approach:
 
-- `/app/globals.css`
+- shared global helpers in `globals.css`
+- inline `style` objects inside JSX
+- small local `<style>` blocks for hover and responsive rules
 
-This file currently defines the shared visual system, including:
+This means visual edits are often split between section files and the global stylesheet.
 
-- colors
-- typography helpers
-- spacing helpers
-- buttons
-- cards
-- badges
-- input styles
-- reveal classes
-- responsive helpers
-- dot pattern background
+### Most important shared classes
 
-### Most important shared layout helpers
+- `.section-wrap` controls max width and horizontal padding
+- `.section-pad` controls shared top and bottom section spacing
+- `.section-pad-hero` controls homepage hero top offset
+- `.section-label` controls small uppercase section labels
+- `.section-heading` controls large section headings
+- `.section-sub` controls section intro/body copy
+- `.btn-primary` and `.btn-secondary` control main CTA button styling
 
-- `.section-wrap` → shared left/right page padding and max width
-- `.section-pad` → shared vertical section spacing
-- `.section-pad-hero` → hero-specific top spacing helper
-- `.section-label` → small teal uppercase label style
-- `.section-heading` → shared section title style
-- `.section-sub` → shared section paragraph style
-- `.btn-primary` and `.btn-secondary` → shared button styling
+Practical rule:
 
-If a section feels misaligned horizontally, check whether it uses `.section-wrap`.
+- If spacing feels off across many sections, check `globals.css`
+- If spacing feels off in only one section, check that section file first
 
-If a section feels inconsistent vertically, check whether it uses `.section-pad`.
+## 10. Shared Content And Navigation
 
-## 9. Shared Content Source
+Shared static content file:
 
-Shared static content lives in:
+- `lib/constants.js`
 
-- `/lib/constants.js`
-
-Currently this file includes:
+This file currently contains:
 
 - `cities`
 - `ownerFaqs`
 - `driverFaqs`
 - `navLinks`
 
-If FAQ content or navbar anchor labels need to change, this is one of the first files to check.
+If the navbar labels, FAQ content, or shared text blocks change, this is one of the first files to inspect.
 
-## 10. Fonts and Metadata
+The navbar reads from `navLinks`, so broken anchor behavior is usually caused by a missing section `id`, not by the navbar component itself.
 
-Root setup lives in:
+## 11. Metadata, Fonts, And Branding
 
-- `/app/layout.tsx`
+Root config file:
 
-This file currently handles:
+- `app/layout.tsx`
 
-- global font loading with DM Sans and DM Mono
-- default SEO metadata
-- Open Graph and Twitter metadata
+This file currently controls:
+
+- DM Sans and DM Mono loading through `next/font`
+- default page title template
+- global SEO description and keywords
+- Open Graph metadata
+- Twitter metadata
 - robots settings
-- icons and manifest references
+- manifest reference
 
-If global SEO, title template, or site-wide branding text must change, edit `/app/layout.tsx`.
+If the brand name, SEO defaults, or site-wide metadata should change, edit `app/layout.tsx`.
 
-## 11. Newsletter / Email Flow
+## 12. Newsletter Flow
 
-Newsletter subscription endpoint:
+Newsletter endpoint:
 
-- `/app/api/subscribe/route.js`
+- `app/api/subscribe/route.js`
 
-This route currently:
+Current behavior:
 
-- validates the submitted email
-- sends an internal notification email via Resend
-- sends a welcome email to the subscriber
+1. validate submitted email
+2. send internal notification email
+3. send welcome email to the subscriber
 
-Environment variables implied by current implementation:
+Expected environment variables:
 
 - `RESEND_API_KEY`
 - `CONTACT_EMAIL`
 
-If newsletter subscription stops working, check:
+If subscription is failing, check:
 
-1. the environment variables
-2. the Resend configuration
-3. the footer subscription UI in `/components/sections/Footer.js`
+1. environment variables
+2. Resend API setup
+3. footer form integration in `components/sections/Footer.js`
 
-## 12. Known Placeholder / Incomplete Areas
+## 13. Known Incomplete Areas
 
-These areas still need future work or confirmation:
+These parts still need work if the product expands:
 
-- `/app/find-parking/page.js` is empty
-- `/app/api/contact/route.js` is empty
-- `/app/api/notify/route.js` is empty
+- `app/api/contact/route.js` is empty
+- `app/api/notify/route.js` is empty
+- `find-parking` is a polished placeholder page, not a complete user flow
 - `Cities.js` exists but is not connected
 - `ForDrivers.js` exists but is not connected
+
+## 14. How To Edit This Project Safely
+
+### If you need to change homepage content
+
+Edit:
+
+- `app/page.js`
+- `components/sections/*.js`
+
+### If you need to change global spacing or typography
+
+Edit:
+
+- `app/globals.css`
+
+### If you need to change partner-specific content
+
+Edit:
+
+- `app/partners/page.js`
+
+### If you need to change YAdmin-specific content
+
+Edit:
+
+- `app/yadmin/page.js`
+
+### If you need to change legal content
+
+Edit:
+
+- the specific legal route page directly
+
+### If you need to change navigation labels or shared FAQs
+
+Edit:
+
+- `lib/constants.js`
+
+## 15. Recommended Future Cleanup
+
+If this codebase continues growing, the most valuable cleanup items would be:
+
+1. extract shared legal layout components
+2. extract repeated card / CTA patterns from large route files
+3. implement `contact` and `notify` API routes if those forms go live
+4. decide whether `Cities` and `ForDrivers` should be completed or removed
+5. reduce inline styles if the team wants more maintainable long-term styling
+
+## 16. Bottom Line
+
+Anyone new to this project should understand it this way:
+
+- the homepage is section-component based
+- Partners and YAdmin are mostly route-local landing pages
+- legal pages are standalone but structurally similar
+- `globals.css` controls the shared layout system
+- `constants.js` controls shared navigation/content values
+- `subscribe` works, `contact` and `notify` do not yet
+
+That is the current state of the project.
 
 Anyone working on the project should treat these as incomplete implementation areas.
 

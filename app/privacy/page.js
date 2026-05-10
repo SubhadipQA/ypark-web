@@ -164,8 +164,8 @@ function LegalHero({ title, lastUpdated }) {
   return (
     <section style={{
       background: "#0D1B2A",
-      paddingTop: "9rem",
-      paddingBottom: "3.5rem",
+      paddingTop: "7rem",
+      paddingBottom: "2.75rem",
       borderBottom: "1px solid #1A3048",
       position: "relative",
       overflow: "hidden",
@@ -275,9 +275,9 @@ function LegalHero({ title, lastUpdated }) {
 function LegalBody({ children }) {
   return (
     <section style={{
-      background: "#0D1B2A",
+      background: "#EBF1FF",
       padding: "4rem 0 6rem",
-      borderBottom: "1px solid #1A3048",
+      borderBottom: "1px solid #DCE6F2",
     }}>
       <div className="section-wrap">
         <div
@@ -304,15 +304,15 @@ function LegalBody({ children }) {
           }}>
             {/* Other legal docs */}
             <div style={{
-              background: "#132236",
-              border: "1px solid #1A3048",
-              borderRadius: "1rem",
-              padding: "1.25rem",
+              background: "rgb(244, 249, 255)",
+              border: "1px solid rgb(226, 235, 246)",
+              borderRadius: "1.25rem",
+              padding: "1.5rem",
             }}>
               <div style={{
                 fontSize: "0.62rem",
                 fontWeight: 700,
-                color: "#506A84",
+                color: "#6B829C",
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 marginBottom: "1rem",
@@ -328,6 +328,7 @@ function LegalBody({ children }) {
                 {[
                   { label: "Privacy Policy", href: "/privacy" },
                   { label: "Terms of Service", href: "/terms" },
+                  { label: "Cookie Policy", href: "/cookie-policy" },
                 ].map((doc) => (
                   <Link
                     key={doc.href}
@@ -335,7 +336,7 @@ function LegalBody({ children }) {
                     style={{
                       fontSize: "0.82rem",
                       fontWeight: 500,
-                      color: "#8BA8C8",
+                      color: "#26415E",
                       textDecoration: "none",
                       padding: "0.5rem 0.75rem",
                       borderRadius: "0.5rem",
@@ -352,15 +353,15 @@ function LegalBody({ children }) {
 
             {/* Contact */}
             <div style={{
-              background: "#132236",
-              border: "1px solid #1A3048",
-              borderRadius: "1rem",
-              padding: "1.25rem",
+              background: "#FFFFFF",
+              border: "1px solid rgb(226, 235, 246)",
+              borderRadius: "1.25rem",
+              padding: "1.5rem",
             }}>
               <div style={{
                 fontSize: "0.82rem",
                 fontWeight: 700,
-                color: "#E8F4FD",
+                color: "#132236",
                 marginBottom: "0.375rem",
                 fontFamily: "'DM Sans', sans-serif",
               }}>
@@ -368,7 +369,7 @@ function LegalBody({ children }) {
               </div>
               <div style={{
                 fontSize: "0.75rem",
-                color: "#506A84",
+                color: "#5F7894",
                 fontFamily: "'DM Sans', sans-serif",
                 marginBottom: "0.875rem",
                 lineHeight: 1.6,
@@ -380,7 +381,7 @@ function LegalBody({ children }) {
                 style={{
                   fontSize: "0.8rem",
                   fontWeight: 600,
-                  color: "#77A7DF",
+                  color: "#1565C0",
                   textDecoration: "none",
                   fontFamily: "'DM Sans', sans-serif",
                   transition: "color 0.2s ease",
@@ -413,10 +414,10 @@ function LegalSection({ title, children }) {
       <h2 style={{
         fontSize: "1.05rem",
         fontWeight: 700,
-        color: "#E8F4FD",
+        color: "#132236",
         marginBottom: "1rem",
         paddingBottom: "0.75rem",
-        borderBottom: "1px solid #1A3048",
+        borderBottom: "1px solid #D6E3F1",
         fontFamily: "'DM Sans', sans-serif",
       }}>
         {title}
@@ -430,7 +431,7 @@ function LegalP({ children }) {
   return (
     <p style={{
       fontSize: "0.875rem",
-      color: "#8BA8C8",
+      color: "#4D6783",
       lineHeight: 1.85,
       marginBottom: "0.875rem",
       fontFamily: "'DM Sans', sans-serif",
@@ -458,7 +459,7 @@ function LegalList({ items }) {
             alignItems: "flex-start",
             gap: "0.625rem",
             fontSize: "0.875rem",
-            color: "#8BA8C8",
+            color: "#4D6783",
             fontFamily: "'DM Sans', sans-serif",
             lineHeight: 1.7,
           }}
