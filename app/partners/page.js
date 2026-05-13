@@ -108,6 +108,17 @@ function PartnersHero() {
         >
           {/* Left */}
           <div>
+            {/* Logo */}
+            <div style={{ marginBottom: "1.75rem" }}>
+              <Image
+                src="/YpartnerWhite.png"
+                alt="YPartner"
+                width={160}
+                height={48}
+                style={{ objectFit: "contain", height: "auto" }}
+              />
+            </div>
+
             <span className="section-label">For Parking Owners</span>
             <h1 style={{
               fontSize: "clamp(2.25rem, 5vw, 3.75rem)",
