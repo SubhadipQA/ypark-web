@@ -302,7 +302,7 @@ export default function Hero() {
               }}
             >
                 <Image
-                  src="/home-hero.png"
+                  src="/YparkImage.png"
                   alt="YPark app preview"
                   fill
                   priority

@@ -213,7 +213,7 @@ function PartnersHero() {
               }}
             >
               <Image
-                src="/partner-hero.png"
+                src="/YpartnerImage.png"
                 alt="YPark partner app preview"
                 fill
                 priority

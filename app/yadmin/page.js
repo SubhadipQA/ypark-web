@@ -100,7 +100,7 @@ function YAdminHero() {
             {/* Logo */}
             <div style={{ marginBottom: "1.75rem" }}>
               <Image
-                src="/YadminWhite.png"
+                src="/YadminImage.png"
                 alt="YAdmin"
                 width={160}
                 height={48}
