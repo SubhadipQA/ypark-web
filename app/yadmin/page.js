@@ -100,7 +100,7 @@ function YAdminHero() {
             {/* Logo */}
             <div style={{ marginBottom: "1.75rem" }}>
               <Image
-                src="/YadminImage.png"
+                src="/YadminWhite.png"
                 alt="YAdmin"
                 width={160}
                 height={48}
@@ -273,7 +273,7 @@ function YAdminHero() {
               }}
             >
               <Image
-                src="/admin-hero.png"
+                src="/YadminImage.png"
                 alt="YAdmin hero preview"
                 fill
                 priority
