@@ -5,95 +5,145 @@ import Footer from "@/components/sections/Footer";
 export const metadata = {
   title: "Cookie Policy",
   description:
-    "Cookie Policy for YPark. Learn what cookies we use, why we use them, and how you can manage them.",
+    "Cookie Policy for Y-Park. Learn what cookies we use, why we use them, and how you can manage them.",
 };
 
 export default function CookiePolicyPage() {
   return (
     <main>
       <Navbar />
-      <LegalHero title="Cookie Policy" lastUpdated="May 2026" />
+      <LegalHero title="Cookie Policy" lastUpdated="July 2026" />
       <LegalBody>
         <LegalSection title="Overview">
           <LegalP>
-            This Cookie Policy explains how YPark and Prothom Analytica
-            India Pvt. Ltd. use cookies and similar technologies on
-            ypark.in and related services.
+            This Cookie Policy (&quot;Policy&quot;) explains how Prothom
+            Analytica India Pvt. Ltd. (&quot;Y-Park&quot;, &quot;Company&quot;,
+            &quot;we&quot;, &quot;us&quot; or &quot;our&quot;) uses cookies
+            and similar tracking technologies when you access or use the
+            Y-Park mobile applications (&quot;Y-Park App&quot;) or our
+            website (collectively referred to as the &quot;Y-Park Platform&quot;).
           </LegalP>
           <LegalP>
-            It describes what these technologies are, why we use them,
-            and the choices you have for controlling them.
+            This Policy describes what these technologies are, why we use
+            them, and your rights to control our use of them. Please read
+            this Policy in conjunction with our Privacy Policy, which
+            explains how we collect and process your personal information.
           </LegalP>
         </LegalSection>
 
         <LegalSection title="What Are Cookies">
           <LegalP>
-            Cookies are small text files stored on your device when you
-            visit a website. They help websites remember your actions,
-            preferences, session state, and other technical information.
+            Cookies are small text files that are placed on your device
+            (computer, smartphone, tablet) when you visit a website or
+            use an application. They are widely used to make websites
+            and applications work more efficiently, provide a better
+            user experience, and to provide information to the owners
+            of the site or application.
           </LegalP>
           <LegalP>
-            Similar technologies may include local storage, pixels, and
-            analytics identifiers that serve related purposes.
+            Similar technologies may include local storage, session
+            storage, pixels, beacons, tags, and device identifiers
+            that serve related purposes for remembering your preferences
+            and tracking usage patterns.
           </LegalP>
         </LegalSection>
 
         <LegalSection title="Types of Cookies We Use">
+          <LegalP>
+            We use the following categories of cookies on the Y-Park Platform:
+          </LegalP>
           <LegalList
             items={[
-              "Essential cookies — required for core site functionality, security, and page delivery",
-              "Preference cookies — used to remember settings such as language or interface choices",
-              "Analytics cookies — used to understand traffic, feature usage, and performance trends",
-              "Marketing or campaign cookies — may be used in the future to measure campaign effectiveness",
+              "Strictly Necessary Cookies - These cookies are essential for the Y-Park Platform to function properly. They enable core functionality such as security, network management, and accessibility. You cannot opt out of these cookies as the Platform cannot function without them.",
+              "Performance and Analytics Cookies - These cookies help us understand how visitors interact with the Y-Park Platform by collecting and reporting information anonymously. They help us improve the performance and usability of our services.",
+              "Functional Cookies - These cookies enable the Y-Park Platform to provide enhanced functionality and personalization, such as remembering your preferences, language settings, and login information.",
+              "Targeting and Advertising Cookies - These cookies may be set through our Platform by our advertising partners to build a profile of your interests and show you relevant advertisements on other sites. They do not store directly personal information but are based on uniquely identifying your browser and internet device.",
             ]}
           />
         </LegalSection>
 
         <LegalSection title="How We Use Cookies">
+          <LegalP>
+            We use cookies and similar technologies for the following purposes:
+          </LegalP>
           <LegalList
             items={[
-              "To keep the website functioning reliably and securely",
-              "To remember user choices and improve usability",
-              "To measure how visitors use pages and features",
-              "To identify technical issues and improve performance",
-              "To understand interest in our product and launch pages",
+              "To authenticate users and prevent fraudulent use of user accounts",
+              "To remember your preferences and settings",
+              "To enable security features and detect malicious activity",
+              "To analyze traffic patterns and measure the effectiveness of our services",
+              "To improve the overall user experience on the Y-Park Platform",
+              "To understand which features are most valuable to our users",
+              "To comply with legal obligations and enforce our terms of service",
             ]}
           />
         </LegalSection>
 
         <LegalSection title="Third-Party Cookies">
           <LegalP>
-            Some cookies may be set by trusted third-party services such
-            as analytics, embedded content providers, or infrastructure
-            tools that help us operate and improve YPark.
+            In addition to our own cookies, we may also use various
+            third-party cookies to report usage statistics of the
+            Y-Park Platform, deliver advertisements on and through
+            the Platform, and to provide other services.
           </LegalP>
           <LegalP>
-            These third parties may process information according to
-            their own privacy and cookie policies.
+            These third parties may include analytics providers,
+            payment processors, cloud infrastructure providers, and
+            other service providers who help us operate and improve
+            the Y-Park Platform. Each third party processes your
+            information in accordance with their own privacy policies.
           </LegalP>
         </LegalSection>
 
-        <LegalSection title="How to Control Cookies">
+        <LegalSection title="Your Cookie Choices">
           <LegalP>
-            You can manage or delete cookies through your browser
-            settings. Most browsers allow you to block cookies, clear
-            stored cookies, or receive alerts before a cookie is set.
+            You have the right to decide whether to accept or reject
+            cookies. You can exercise your cookie preferences by:
           </LegalP>
+          <LegalList
+            items={[
+              "Browser Settings - Most web browsers allow you to control cookies through their settings. You can set your browser to refuse all cookies, accept only certain cookies, or delete cookies when you close your browser.",
+              "Mobile Device Settings - Your mobile device may allow you to control cookies and similar technologies through its settings menu.",
+              "Opt-Out Links - Some third-party services provide direct opt-out mechanisms for their tracking technologies.",
+            ]}
+          />
           <LegalP>
-            Blocking some cookies may affect how parts of the website
-            function, especially essential features.
+            Please note that if you choose to block or delete cookies,
+            some parts of the Y-Park Platform may not function properly,
+            and your user experience may be affected.
+          </LegalP>
+        </LegalSection>
+
+        <LegalSection title="Data Retention">
+          <LegalP>
+            The length of time cookies remain on your device depends
+            on whether they are &quot;persistent&quot; or &quot;session&quot;
+            cookies. Session cookies are temporary and are deleted when
+            you close your browser. Persistent cookies remain on your
+            device for a set period or until you delete them manually.
           </LegalP>
         </LegalSection>
 
         <LegalSection title="Updates to This Policy">
           <LegalP>
             We may update this Cookie Policy from time to time to reflect
-            product changes, legal requirements, or operational needs.
-            The latest revision date is shown at the top of this page.
+            changes in technology, legislation, our business operations,
+            or any other reason we determine to be necessary or appropriate.
+            Any changes will be effective immediately upon posting of the
+            revised Policy on the Y-Park Platform. The date at the top of
+            this Policy indicates when it was last updated.
+          </LegalP>
+          <LegalP>
+            We encourage you to review this Policy periodically to stay
+            informed about our use of cookies and related technologies.
           </LegalP>
         </LegalSection>
 
-        <LegalSection title="Contact">
+        <LegalSection title="Contact Us">
+          <LegalP>
+            If you have any questions about our use of cookies or this
+            Cookie Policy, please contact us at:
+          </LegalP>
           <LegalList
             items={[
               "Email: info@prothomai.com",

@@ -14,21 +14,71 @@ export default function PrivacyPage() {
       <Navbar />
       <LegalHero
         title="Privacy Policy"
-        lastUpdated="May 2025"
+        lastUpdated="July 2026"
       />
       <LegalBody>
 
         <LegalSection title="Overview">
           <LegalP>
-            This Privacy Policy explains how Prothom Analytica India
-            Pvt. Ltd. (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;)
-            collects, uses, stores and protects your personal information
-            when you use YPark at ypark.in or our mobile applications.
+            Your privacy matters to Prothom Analytica India Pvt. Ltd.
+            (the &quot;Company&quot;, &quot;we&quot;, &quot;Y-Park&quot;,
+            &quot;us&quot; or &quot;our&quot;).
           </LegalP>
           <LegalP>
-            By using our services, you agree to the collection and use
-            of information as described in this policy.
+            This Privacy Policy (&quot;Policy&quot;) describes the policies
+            and procedures on the collection, use, processing, storage,
+            retrieval, disclosure, transfer and protection of your information,
+            including personal information and sensitive personal data or
+            information (&quot;Information&quot;), that Y-Park may receive
+            through your online access, interaction or use of the Y-Park
+            mobile applications (&quot;Y-Park App&quot;) or our website
+            (collectively referred to as the &quot;Y-Park Platform&quot;)
+            or through your offline interaction with us including through
+            mails, phones, in person, etc., or while availing our Services.
           </LegalP>
+          <LegalP>
+            The terms &quot;you&quot; and &quot;your&quot; refer to a Y-Partner,
+            a Customer, a Vendor Partner or any other user of the Y-Park Platform
+            and/or availing the Services.
+          </LegalP>
+          <LegalP>
+            The term &quot;Services&quot; refers to any services offered by
+            Y-Park in accordance with the terms and conditions applicable to
+            you (and available on the Y-Park Platform) whether on the Y-Park
+            Platform or otherwise.
+          </LegalP>
+          <LegalP>
+            Please read this Policy before using the Y-Park Platform or
+            submitting any Information to Y-Park. This Policy is a part of
+            and incorporated within, and is to be read along with, the terms
+            and conditions applicable to the users of the Y-Park App available
+            on the Y-Park Platform.
+          </LegalP>
+        </LegalSection>
+
+        <LegalSection title="User Acceptance">
+          <LegalP>
+            By accessing or using the Y-Park Platform or the Services, you
+            agree and consent to this Policy, along with any amendments made
+            by the Company at its sole discretion and posted on the Y-Park
+            Platform from time to time.
+          </LegalP>
+          <LegalP>
+            Any collection, processing, retrieval, transfer, use, storage,
+            disclosure and protection of your Information will be in accordance
+            with this Policy and applicable laws including but not limited to
+            Information Technology Act, 2000, and the rules framed thereunder
+            (&quot;Applicable Laws&quot;). If you do not agree with the Policy,
+            please do not use or access the Y-Park Platform.
+          </LegalP>
+          <LegalP>
+            You hereby represent to Y-Park that:
+          </LegalP>
+          <LegalList items={[
+            "The Information you provide to Y-Park from time to time, is and will be authentic, correct, current and updated and you have all the rights, permissions and consents as may be required to provide such Information to Y-Park.",
+            "Your providing of the Information as well as Y-Park's consequent storage, collection, usage, transfer, access, or processing of such Information will not be in violation of any agreement, Applicable Laws, charter documents, judgments, orders and decrees.",
+            "If you disclose to us any Information relating to other people, you represent that you have the authority to do so and to permit us to use such Information in accordance with this Policy.",
+          ]} />
         </LegalSection>
 
         <LegalSection title="Information We Collect">
@@ -49,7 +99,7 @@ export default function PrivacyPage() {
 
         <LegalSection title="How We Use Your Information">
           <LegalList items={[
-            "To provide, operate and improve YPark",
+            "To provide, operate and improve Y-Park",
             "To process registrations, parking sessions and payments",
             "To send service-related communications such as confirmations and receipts",
             "To send updates if you have subscribed — unsubscribe anytime",
@@ -72,7 +122,7 @@ export default function PrivacyPage() {
             <a
               href="mailto:info@prothomai.com"
               style={{
-                color: "#77A7DF",
+                color: "#1565C0",
                 textDecoration: "none",
                 fontWeight: 600,
               }}
@@ -106,7 +156,7 @@ export default function PrivacyPage() {
             <a
               href="mailto:info@prothomai.com"
               style={{
-                color: "#77A7DF",
+                color: "#1565C0",
                 textDecoration: "none",
                 fontWeight: 600,
               }}
@@ -126,7 +176,7 @@ export default function PrivacyPage() {
           </LegalP>
         </LegalSection>
 
-        <LegalSection title="Children's Privacy">
+        <LegalSection title="Children&apos;s Privacy">
           <LegalP>
             Our services are not directed to individuals under 18.
             We do not knowingly collect personal information from children.

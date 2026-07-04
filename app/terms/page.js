@@ -3,9 +3,9 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: "Terms of Service",
+  title: "Terms and Conditions for Y-Partners",
   description:
-    "Terms of Service for YPark. Read our terms before using our services.",
+    "Terms and Conditions for Y-Partners using the Y-Park platform.",
 };
 
 export default function TermsPage() {
@@ -13,121 +13,177 @@ export default function TermsPage() {
     <main>
       <Navbar />
       <LegalHero
-        title="Terms of Service"
-        lastUpdated="May 2025"
+        title="Terms and Conditions for Y-Partners"
+        lastUpdated="July 2026"
       />
       <LegalBody>
 
+        <LegalSection title="Electronic Record">
+          <LegalP>
+            This document is an electronic record in terms of Information
+            Technology Act, 2000 and rules thereunder as applicable and the
+            provisions pertaining to electronic records in various statutes
+            as amended by the Information Technology Act, 2000.
+          </LegalP>
+        </LegalSection>
+
+        <LegalSection title="About Y-Park">
+          <LegalP>
+            Prothom Analytica India Private Limited (&quot;Y-Park&quot; /
+            &quot;Company&quot; / &quot;us&quot;, &quot;we&quot; or
+            &quot;our&quot;) provides technology-based services and acts
+            as an intermediary for facilitating: (i) on-demand Parking
+            services by means of two-wheelers and four-wheelers and (ii)
+            Parking space management by using Y-Partners.
+          </LegalP>
+          <LegalP>
+            All the mentioned parking services are collectively referred
+            to as &quot;Services&quot; and other support services (such as
+            associated payment collection) as offered by Y-Park from time
+            to time by means of the Company&apos;s website and the mobile
+            application &quot;Y-Park&quot; (collectively, &quot;Platform&quot;).
+          </LegalP>
+          <LegalP>
+            The Services are provided / offered by third party vehicle
+            operators, service providers who wish to offer such Services
+            through the Platform (&quot;Y-Partner(s)&quot; / &quot;you&quot;).
+          </LegalP>
+        </LegalSection>
+
+        <LegalSection title="Clarification">
+          <LegalP>
+            In the State of West Bengal, Y-Park functions as a demand-generation
+            platform, facilitating lead generation for Y-Partners who directly
+            provide parking services to customers. Y-Park owns and operates a
+            technology-driven Software-as-a-Service (&quot;SaaS Platform&quot;),
+            which serves as a discovery and lead-generation platform for
+            Y-Partners offering parking services on their own account, subject
+            to the terms and conditions mutually agreed between the customers
+            and the Y-Partners.
+          </LegalP>
+          <LegalP>
+            The parking services are rendered directly by the Y-Partners to
+            the customers, while Y-Park merely acts as a technology facilitator
+            enabling transactions initiated through the Platform. Y-Park assumes
+            no responsibility or liability for any deficiency, default, or
+            failure in the services provided by the Y-Partners.
+          </LegalP>
+        </LegalSection>
+
         <LegalSection title="Agreement to Terms">
           <LegalP>
-            By accessing or using YPark at ypark.in or our mobile
-            applications, you agree to be bound by these Terms of Service.
-            If you do not agree, please do not use our services.
+            On the basis of the representations and warranties provided by
+            the Y-Partner, the Company has agreed to list the Parking Spaces
+            on the Platform and to enable the Y-Partner to provide the Services
+            through the Platform in accordance with the terms and conditions as
+            hereinafter provided and any other policy or agreement or document
+            made applicable / executed by you for the purpose of the provision
+            of Services (collectively, &quot;T&Cs&quot;).
           </LegalP>
           <LegalP>
-            We reserve the right to update these terms at any time.
-            Continued use of our services after changes constitutes
-            acceptance.
+            These T&Cs will govern the relationship between you and the Company
+            in the course of provision of the Services. By signing up or
+            registering on the Platform and offering to provide one or more of
+            the Services, you acknowledge that you have read and understood
+            these T&Cs and agree to be bound by these T&Cs, without any
+            limitation or qualification.
+          </LegalP>
+          <LegalP>
+            If you do not agree with these T&Cs, please do not sign-up or
+            register on the Platform or offer any Services.
+          </LegalP>
+          <LegalP>
+            Use of and access to the Platform is offered to you upon the
+            unconditional acceptance of all the terms, conditions and notices
+            contained in these T&Cs and Privacy Policy (which is incorporated
+            herein by reference), along with any amendments made by the Company
+            at its sole discretion and posted on the Platform from time to time.
+          </LegalP>
+          <LegalP>
+            These T&Cs expressly supersede prior agreements or arrangements
+            with you.
           </LegalP>
         </LegalSection>
 
-        <LegalSection title="Description of Services">
+        <LegalSection title="I. General Covenants">
           <LegalP>
-            YPark is a parking marketplace platform operated by
-            Prothom Analytica India Pvt. Ltd. Our services include:
+            As a Y-Partner, you agree to:
           </LegalP>
           <LegalList items={[
-            "YPark vendor platform — for parking zone owners and ground staff to manage operations",
-            "YPark customer platform — for vehicle owners to find and book parking (coming soon)",
-            "Web interface at ypark.in",
-            "Mobile applications available on Android",
+            "Provide accurate and complete information during registration and maintain updated records",
+            "Ensure you have the legal right to operate the parking spaces you list on the Platform",
+            "Comply with all applicable local, state and national laws and regulations",
+            "Maintain the security of your account credentials and notify us immediately of unauthorized use",
+            "Provide services in a professional manner consistent with industry standards",
+            "Not engage in fraudulent transactions, misrepresentation, or any unlawful activities",
           ]} />
         </LegalSection>
 
-        <LegalSection title="User Accounts">
+        <LegalSection title="Services and Platform Usage">
           <LegalP>
-            To use certain features you must create an account.
-            You are responsible for:
+            The Platform enables Y-Partners to:
           </LegalP>
           <LegalList items={[
-            "Providing accurate and complete information during registration",
-            "Maintaining the security of your account credentials",
-            "All activity that occurs under your account",
-            "Notifying us immediately of any unauthorized use",
-          ]} />
-        </LegalSection>
-
-        <LegalSection title="Parking Owner Terms">
-          <LegalP>
-            If you register as a parking zone owner you additionally agree to:
-          </LegalP>
-          <LegalList items={[
-            "Provide accurate information about your parking zones including location and documentation",
-            "Ensure you have the legal right to operate the parking zone you list",
-            "Comply with all applicable local, state and national laws",
-            "Allow YPark to verify your zone documentation before approval",
-            "Pay the applicable platform service charges on transactions processed through YPark",
-            "Not engage in fraudulent transactions or misrepresentation",
-          ]} />
-        </LegalSection>
-
-        <LegalSection title="Prohibited Activities">
-          <LegalP>
-            You may not use our services to:
-          </LegalP>
-          <LegalList items={[
-            "Violate any applicable laws or regulations",
-            "Provide false or misleading information",
-            "Impersonate any person or entity",
-            "Engage in fraudulent transactions",
-            "Attempt to gain unauthorized access to our systems",
-            "Use our services for any unlawful purpose",
+            "List and manage parking spaces through the Y-Park Platform",
+            "Receive bookings and manage parking sessions",
+            "Process payments through integrated payment gateways",
+            "Access reporting and analytics for their parking operations",
+            "Communicate with customers through the Platform",
           ]} />
         </LegalSection>
 
         <LegalSection title="Payments and Fees">
           <LegalP>
-            YPark charges a platform service fee on transactions
-            processed through the platform. The applicable fee is
-            communicated during zone registration and may be updated
-            with notice.
+            Y-Park charges a platform service fee on transactions processed
+            through the Platform. The applicable fee structure is communicated
+            during registration and may be updated with prior notice.
           </LegalP>
           <LegalP>
-            All payments are processed through third-party gateways.
-            We are not responsible for errors arising from payment
-            gateway services.
+            All payments are processed through third-party payment gateways.
+            Y-Park is not responsible for errors, delays, or issues arising
+            from payment gateway services.
           </LegalP>
         </LegalSection>
 
         <LegalSection title="Intellectual Property">
           <LegalP>
-            All content, design, code and materials on ypark.in and
-            our applications are the property of Prothom Analytica
-            India Pvt. Ltd. or our licensors. You may not reproduce,
-            distribute or create derivative works without our explicit
-            written permission.
+            All content, design, code, trademarks, and materials on the Platform
+            are the property of Prothom Analytica India Pvt. Ltd. or its licensors.
+            You may not reproduce, distribute, modify, or create derivative works
+            without explicit written permission from the Company.
           </LegalP>
         </LegalSection>
 
         <LegalSection title="Limitation of Liability">
           <LegalP>
-            To the maximum extent permitted by law, Prothom Analytica
-            India Pvt. Ltd. shall not be liable for any indirect,
-            incidental or consequential damages arising from your use
-            of our services.
+            To the maximum extent permitted by law, Prothom Analytica India
+            Pvt. Ltd. shall not be liable for any indirect, incidental,
+            special, or consequential damages arising from your use of the
+            Platform or Services.
           </LegalP>
           <LegalP>
-            We do not guarantee uninterrupted or error-free service.
-            We are not responsible for losses arising from technical
-            failures or events beyond our control.
+            We do not guarantee uninterrupted or error-free service. We are
+            not responsible for losses arising from technical failures,
+            service interruptions, or events beyond our reasonable control.
           </LegalP>
         </LegalSection>
 
-        <LegalSection title="Governing Law">
+        <LegalSection title="Termination">
           <LegalP>
-            These Terms of Service are governed by the laws of India.
-            Any disputes shall be subject to the exclusive jurisdiction
-            of the courts of India.
+            Either party may terminate this agreement with written notice.
+            Y-Park reserves the right to suspend or terminate your access
+            to the Platform immediately if you breach these T&Cs or engage
+            in activities that may harm the Platform, other users, or the
+            Company&apos;s reputation.
+          </LegalP>
+        </LegalSection>
+
+        <LegalSection title="Governing Law and Jurisdiction">
+          <LegalP>
+            These Terms and Conditions are governed by the laws of India.
+            Any disputes arising out of or in connection with these T&Cs
+            shall be subject to the exclusive jurisdiction of the courts
+            located in Kolkata, West Bengal, India.
           </LegalP>
         </LegalSection>
 
