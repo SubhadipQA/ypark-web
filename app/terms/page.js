@@ -189,7 +189,7 @@ export default function TermsPage() {
 
         <LegalSection title="Contact">
           <LegalList items={[
-            "Email: info@prothomai.com",
+            "Email: sales@prothomai.com",
             "Company: Prothom Analytica India Pvt. Ltd.",
             "Website: prothomai.com",
           ]} />
@@ -410,7 +410,7 @@ function LegalBody({ children }) {
                 We respond within 24 hours.
               </div>
               <a
-                href="mailto:info@prothomai.com"
+                href="mailto:sales@prothomai.com"
                 style={{
                   fontSize: "0.8rem",
                   fontWeight: 600,
@@ -420,7 +420,7 @@ function LegalBody({ children }) {
                   transition: "color 0.2s ease",
                 }}
               >
-                info@prothomai.com →
+                sales@prothomai.com →
               </a>
             </div>
           </div>

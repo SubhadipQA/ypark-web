@@ -272,7 +272,7 @@ export default function FAQ() {
             flexWrap: "wrap",
           }}>
             <a
-              href="mailto:info@prothomai.com"
+              href="mailto:sales@prothomai.com"
               className="btn-primary"
               style={{
                 fontSize: "0.85rem",
