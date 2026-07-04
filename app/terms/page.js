@@ -3,9 +3,9 @@ import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 
 export const metadata = {
-  title: "Terms and Conditions for Y-Partners",
+  title: "Terms and Conditions",
   description:
-    "Terms and Conditions for Y-Partners using the Y-Park platform.",
+    "Terms and Conditions for using the Y-Park platform and services.",
 };
 
 export default function TermsPage() {
@@ -13,7 +13,7 @@ export default function TermsPage() {
     <main>
       <Navbar />
       <LegalHero
-        title="Terms and Conditions for Y-Partners"
+        title="Terms and Conditions"
         lastUpdated="July 2026"
       />
       <LegalBody>
@@ -209,22 +209,13 @@ export default function TermsPage() {
 function LegalHero({ title, lastUpdated }) {
   return (
     <section style={{
-      background: "#0D1B2A",
+      background: "linear-gradient(180deg, #EBF1FF 0%, #F5F8FF 100%)",
       paddingTop: "7rem",
       paddingBottom: "2.75rem",
-      borderBottom: "1px solid #1A3048",
+      borderBottom: "1px solid #D6E4FF",
       position: "relative",
       overflow: "hidden",
     }}>
-      <div
-        className="dot-pattern"
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          opacity: 0.4,
-        }}
-      />
       <div
         className="section-wrap"
         style={{ position: "relative", zIndex: 1 }}
@@ -246,13 +237,13 @@ function LegalHero({ title, lastUpdated }) {
               transition: "color 0.2s ease",
             }}
           >
-            YPark
+            Y-Park
           </Link>
           <svg
             width="12" height="12"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#2C4A6E"
+            stroke="#6B829C"
             strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -262,7 +253,7 @@ function LegalHero({ title, lastUpdated }) {
           </svg>
           <span style={{
             fontSize: "0.75rem",
-            color: "#8BA8C8",
+            color: "#2C4A6E",
             fontFamily: "'DM Sans', sans-serif",
             fontWeight: 600,
           }}>
@@ -270,14 +261,19 @@ function LegalHero({ title, lastUpdated }) {
           </span>
         </div>
 
-        <span className="section-label">Legal</span>
+        <span className="section-label" style={{
+          background: "linear-gradient(135deg, #0063FF 0%, #0052D4 100%)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+        }}>Legal</span>
 
         <h1 style={{
           fontSize: "clamp(2rem, 4vw, 3rem)",
           fontWeight: 800,
           lineHeight: 1.1,
           letterSpacing: "-1px",
-          color: "#E8F4FD",
+          color: "#0D1B2A",
           fontFamily: "'DM Sans', sans-serif",
           marginBottom: "1rem",
         }}>
@@ -300,7 +296,7 @@ function LegalHero({ title, lastUpdated }) {
           <div style={{
             width: "3px", height: "3px",
             borderRadius: "9999px",
-            background: "#2C4A6E",
+            background: "#6B829C",
           }} />
           <span style={{
             fontSize: "0.78rem",
