@@ -73,6 +73,15 @@ export const metadata = {
     },
   },
   manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/fab-icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/fab-icon.png", type: "image/png" },
+    ],
+    shortcut: "/fab-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

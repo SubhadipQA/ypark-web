@@ -43,14 +43,15 @@ export default function Navbar() {
           position: "fixed",
           top: 0, left: 0, right: 0,
           zIndex: 50,
-          transition: "background 0.3s ease, border-color 0.3s ease",
+          transition: "background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease",
           background: scrolled
-            ? "rgba(13, 27, 42, 0.95)"
-            : "transparent",
-          backdropFilter: scrolled ? "blur(12px)" : "none",
+            ? "rgba(255, 255, 255, 0.97)"
+            : "rgba(244, 244, 244, 0.85)",
+          backdropFilter: "blur(12px)",
           borderBottom: scrolled
-            ? "1px solid #1A3048"
+            ? "1px solid #E2E8F0"
             : "1px solid transparent",
+          boxShadow: scrolled ? "0 1px 12px rgba(0,0,0,0.06)" : "none",
         }}
       >
         <div className="section-wrap">
@@ -58,7 +59,7 @@ export default function Navbar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            height: "68px",
+            height: "80px",
           }}>
 
             {/* ── Logo ── */}
@@ -72,10 +73,11 @@ export default function Navbar() {
               }}
             >
               <Image
-                src="/YparkWhite.png"
+                src="/ypark-blue.png"
                 alt="YPark Logo"
-                width={120}
-                height={120}
+                width={172}
+                height={172}
+                style={{ objectFit: "contain", flexShrink: 0, marginLeft: "-40px", marginTop: "-30px", marginBottom: "-30px" }}
               />
             </Link>
 
@@ -91,13 +93,13 @@ export default function Navbar() {
                   style={{
                     fontSize: "0.875rem",
                     fontWeight: 500,
-                    color: "#8BA8C8",
+                    color: "#4B5563",
                     textDecoration: "none",
                     fontFamily: "'DM Sans', sans-serif",
                     transition: "color 0.2s ease",
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.color = "#E8F4FD"}
-                  onMouseLeave={(e) => e.currentTarget.style.color = "#8BA8C8"}
+                  onMouseEnter={(e) => e.currentTarget.style.color = "#0063FF"}
+                  onMouseLeave={(e) => e.currentTarget.style.color = "#4B5563"}
                 >
                   {link.label}
                 </NavItem>
@@ -110,32 +112,31 @@ export default function Navbar() {
               style={{ alignItems: "center", gap: "0.75rem" }}
             >
               <Link
-                href="/partners"
+                href="#contact"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  gap: "0.375rem",
                   padding: "0.5rem 1.125rem",
                   borderRadius: "0.625rem",
-                  border: "1px solid #1A3048",
-                  background: "transparent",
+                  border: "1.5px solid #0063FF",
+                  background: "#FFFFFF",
                   fontSize: "0.82rem",
                   fontWeight: 600,
-                  color: "#8BA8C8",
+                  color: "#0063FF",
                   textDecoration: "none",
                   fontFamily: "'DM Sans', sans-serif",
-                  transition: "border-color 0.2s ease, color 0.2s ease",
+                  transition: "background 0.2s ease, color 0.2s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#1565C0";
-                  e.currentTarget.style.color = "#E8F4FD";
+                  e.currentTarget.style.background = "#0063FF";
+                  e.currentTarget.style.color = "#FFFFFF";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#1A3048";
-                  e.currentTarget.style.color = "#8BA8C8";
+                  e.currentTarget.style.background = "#FFFFFF";
+                  e.currentTarget.style.color = "#0063FF";
                 }}
               >
-                For Partners
+                Contact Us
               </Link>
 
               <a
@@ -180,7 +181,7 @@ export default function Navbar() {
               <span style={{
                 display: "block",
                 width: "22px", height: "2px",
-                background: "#E8F4FD",
+                background: "#111827",
                 borderRadius: "2px",
                 transition: "transform 0.3s ease, opacity 0.3s ease",
                 transform: menuOpen
@@ -190,7 +191,7 @@ export default function Navbar() {
               <span style={{
                 display: "block",
                 width: "22px", height: "2px",
-                background: "#E8F4FD",
+                background: "#111827",
                 borderRadius: "2px",
                 transition: "opacity 0.3s ease",
                 opacity: menuOpen ? 0 : 1,
@@ -198,7 +199,7 @@ export default function Navbar() {
               <span style={{
                 display: "block",
                 width: "22px", height: "2px",
-                background: "#E8F4FD",
+                background: "#111827",
                 borderRadius: "2px",
                 transition: "transform 0.3s ease",
                 transform: menuOpen
@@ -217,7 +218,7 @@ export default function Navbar() {
           position: "fixed",
           inset: 0,
           zIndex: 40,
-          background: "#0D1B2A",
+          background: "#FFFFFF",
           display: "flex",
           flexDirection: "column",
           padding: "5.5rem 1.5rem 2rem",
@@ -242,15 +243,15 @@ export default function Navbar() {
               style={{
                 fontSize: "1.5rem",
                 fontWeight: 700,
-                color: "#E8F4FD",
+                color: "#111827",
                 textDecoration: "none",
                 padding: "1rem 0",
-                borderBottom: "1px solid #1A3048",
+                borderBottom: "1px solid #E2E8F0",
                 fontFamily: "'DM Sans', sans-serif",
                 transition: "color 0.2s ease",
               }}
-              onMouseEnter={(e) => e.currentTarget.style.color = "#77A7DF"}
-              onMouseLeave={(e) => e.currentTarget.style.color = "#E8F4FD"}
+              onMouseEnter={(e) => e.currentTarget.style.color = "#0063FF"}
+              onMouseLeave={(e) => e.currentTarget.style.color = "#111827"}
             >
               {link.label}
             </NavItem>
@@ -279,32 +280,20 @@ export default function Navbar() {
             Download App
           </a>
           <Link
-            href="/partners"
-            className="btn-secondary"
-            onClick={() => setMenuOpen(false)}
-            style={{
-              justifyContent: "center",
-              fontSize: "1rem",
-              padding: "0.875rem",
-            }}
-          >
-            For Partners
-          </Link>
-          <Link
             href="/find-parking"
             onClick={() => setMenuOpen(false)}
             style={{
               textAlign: "center",
               fontSize: "0.875rem",
               fontWeight: 600,
-              color: "#506A84",
+              color: "#9CA3AF",
               textDecoration: "none",
               padding: "0.5rem",
               fontFamily: "'DM Sans', sans-serif",
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = "#8BA8C8"}
-            onMouseLeave={(e) => e.currentTarget.style.color = "#506A84"}
+            onMouseEnter={(e) => e.currentTarget.style.color = "#0063FF"}
+            onMouseLeave={(e) => e.currentTarget.style.color = "#9CA3AF"}
           >
             Find Parking →
           </Link>
@@ -314,14 +303,14 @@ export default function Navbar() {
         <div style={{
           marginTop: "1.5rem",
           paddingTop: "1.25rem",
-          borderTop: "1px solid #1A3048",
+          borderTop: "1px solid #E2E8F0",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
         }}>
           <span style={{
             fontSize: "0.72rem",
-            color: "#506A84",
+            color: "#9CA3AF",
             fontFamily: "'DM Sans', sans-serif",
           }}>
             A product of Prothom Analytica India
@@ -332,13 +321,13 @@ export default function Navbar() {
             rel="noopener noreferrer"
             style={{
               fontSize: "0.72rem",
-              color: "#506A84",
+              color: "#9CA3AF",
               textDecoration: "none",
               fontFamily: "'DM Sans', sans-serif",
               transition: "color 0.2s ease",
             }}
-            onMouseEnter={(e) => e.currentTarget.style.color = "#8BA8C8"}
-            onMouseLeave={(e) => e.currentTarget.style.color = "#506A84"}
+            onMouseEnter={(e) => e.currentTarget.style.color = "#0063FF"}
+            onMouseLeave={(e) => e.currentTarget.style.color = "#9CA3AF"}
           >
             prothomai.com →
           </a>

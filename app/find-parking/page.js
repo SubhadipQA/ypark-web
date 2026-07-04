@@ -16,12 +16,12 @@ export default function FindParkingPage() {
 				style={{
 					minHeight: "calc(100vh - 160px)",
 					background:
-						"radial-gradient(circle at top, rgba(26, 48, 72, 0.45), transparent 40%), linear-gradient(180deg, #0D1B2A 0%, #13273D 100%)",
+						"linear-gradient(135deg, #EBF1FF 0%, #F5F8FF 50%, #EEF3FF 100%)",
 					paddingTop: "7rem",
 					paddingBottom: "3.5rem",
 					position: "relative",
 					overflow: "hidden",
-					borderBottom: "1px solid #1A3048",
+					borderBottom: "1px solid #D6E4FF",
 				}}
 			>
 				<div
@@ -29,7 +29,7 @@ export default function FindParkingPage() {
 					style={{
 						position: "absolute",
 						inset: 0,
-						opacity: 0.4,
+						opacity: 0.5,
 						pointerEvents: "none",
 					}}
 				/>
@@ -47,24 +47,21 @@ export default function FindParkingPage() {
 						style={{
 							width: "100%",
 							maxWidth: "820px",
-							background: "rgba(12, 24, 38, 0.72)",
-							border: "1px solid rgba(139, 168, 200, 0.16)",
+							background: "#FFFFFF",
+							border: "1px solid #D6E4FF",
 							borderRadius: "32px",
 							padding: "clamp(2rem, 5vw, 4rem)",
-							boxShadow: "0 30px 80px rgba(0, 0, 0, 0.28)",
-							backdropFilter: "blur(10px)",
+							boxShadow: "0 30px 80px rgba(21, 101, 192, 0.08)",
 							textAlign: "center",
 						}}
 					>
-						<span className="section-label">For Drivers</span>
-
 						<h1
 							style={{
 								fontSize: "clamp(2.5rem, 7vw, 4.75rem)",
 								lineHeight: 1,
 								letterSpacing: "-2px",
 								fontWeight: 800,
-								color: "#E8F4FD",
+								color: "#0D1B2A",
 								marginTop: "1rem",
 								marginBottom: "1.25rem",
 								fontFamily: "'DM Sans', sans-serif",
@@ -79,7 +76,7 @@ export default function FindParkingPage() {
 								margin: "0 auto",
 								fontSize: "1.05rem",
 								lineHeight: 1.8,
-								color: "#AFC4DA",
+								color: "#2C4A6E",
 								fontFamily: "'DM Sans', sans-serif",
 							}}
 						>
@@ -105,9 +102,9 @@ export default function FindParkingPage() {
 									style={{
 										padding: "1rem 1.25rem",
 										borderRadius: "18px",
-										background: "rgba(24, 46, 69, 0.7)",
-										border: "1px solid rgba(139, 168, 200, 0.12)",
-										color: "#D7E6F5",
+										background: "#F5F8FF",
+										border: "1px solid #E5EEFA",
+										color: "#0D1B2A",
 										fontSize: "0.95rem",
 										fontWeight: 600,
 										fontFamily: "'DM Sans', sans-serif",
@@ -129,18 +126,13 @@ export default function FindParkingPage() {
 						>
 							<Link
 								href="/"
+								className="btn-primary"
 								style={{
 									display: "inline-flex",
 									alignItems: "center",
 									justifyContent: "center",
 									minWidth: "180px",
 									padding: "0.95rem 1.4rem",
-									borderRadius: "999px",
-									background: "#10B981",
-									color: "#062A1E",
-									textDecoration: "none",
-									fontWeight: 800,
-									fontFamily: "'DM Sans', sans-serif",
 								}}
 							>
 								Back to Home
@@ -148,19 +140,13 @@ export default function FindParkingPage() {
 
 							<Link
 								href="/partners"
+								className="btn-secondary"
 								style={{
 									display: "inline-flex",
 									alignItems: "center",
 									justifyContent: "center",
 									minWidth: "180px",
 									padding: "0.95rem 1.4rem",
-									borderRadius: "999px",
-									background: "transparent",
-									color: "#D7E6F5",
-									textDecoration: "none",
-									fontWeight: 700,
-									fontFamily: "'DM Sans', sans-serif",
-									border: "1px solid rgba(139, 168, 200, 0.24)",
 								}}
 							>
 								For Parking Owners

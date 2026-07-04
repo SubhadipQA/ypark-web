@@ -1,11 +1,10 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
-import ForOwners from "@/components/sections/ForOwners";
 import HowItWorks from "@/components/sections/HowItWorks";
+import Ecosystem from "@/components/sections/Ecosystem";
 import Features from "@/components/sections/Features";
-import AppDownload from "@/components/sections/AppDownload";
-import FAQ from "@/components/sections/FAQ";
+import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
 export default function Home() {
@@ -14,13 +13,11 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Problem />
-      <ForOwners />
       <HowItWorks />
       <Features />
-      <AppDownload />
-      <FAQ />
+      <Ecosystem />
+      <Contact />
       <Footer />
-      {/* sections added one by one */}
     </main>
   );
 }

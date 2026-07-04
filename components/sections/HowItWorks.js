@@ -31,21 +31,7 @@ const steps = [
 ];
 
 export default function HowItWorks() {
-  const sectionRef = useRef(null);
   const stepsRef = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     const stepObserver = new IntersectionObserver(
@@ -68,28 +54,12 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      ref={sectionRef}
-      style={{
-        background: "#132236",
-        borderTop: "1px solid #1A3048",
-        position: "relative",
-        overflow: "hidden",
-      }}
+      className="section-v-pad"
+      style={{ background: "#FFFFFF", borderTop: "1px solid #F3F4F6" }}
     >
-      {/* Dot pattern */}
-      <div
-        className="dot-pattern"
-        style={{
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          opacity: 0.4,
-        }}
-      />
+      <div className="section-wrap">
 
-      <div className="section-wrap section-pad">
-
-        {/* ── Header ── */}
+        {/* Header + summary card */}
         <div
           style={{
             display: "grid",
@@ -114,10 +84,10 @@ export default function HowItWorks() {
             </p>
           </div>
 
-          {/* Summary card */}
-          <div style={{
-            background: "#0D1B2A",
-            border: "1px solid #1A3048",
+          {/* Summary card — desktop only */}
+          <div className="hiw-summary" style={{
+            background: "#F9FAFB",
+            border: "1px solid #E2E8F0",
             borderRadius: "1rem",
             padding: "1.5rem",
             display: "flex",
@@ -127,7 +97,7 @@ export default function HowItWorks() {
             <div style={{
               fontSize: "0.65rem",
               fontWeight: 700,
-              color: "#506A84",
+              color: "#9CA3AF",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               fontFamily: "'DM Sans', sans-serif",
@@ -135,19 +105,12 @@ export default function HowItWorks() {
               4 steps to go live
             </div>
             {steps.map((step, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.875rem",
-                }}
-              >
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: "0.875rem" }}>
                 <div style={{
                   fontFamily: "'DM Mono', monospace",
                   fontSize: "0.7rem",
                   fontWeight: 700,
-                  color: "#506A84",
+                  color: "#9CA3AF",
                   flexShrink: 0,
                   width: "20px",
                 }}>
@@ -156,7 +119,7 @@ export default function HowItWorks() {
                 <div style={{
                   fontSize: "0.8rem",
                   fontWeight: 600,
-                  color: "#8BA8C8",
+                  color: "#374151",
                   fontFamily: "'DM Sans', sans-serif",
                 }}>
                   {step.title}
@@ -166,13 +129,8 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* ── Steps ── */}
-        <div style={{
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          gap: "0",
-        }}>
+        {/* Steps timeline */}
+        <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: "0" }}>
           {/* Vertical line */}
           <div style={{
             position: "absolute",
@@ -180,7 +138,7 @@ export default function HowItWorks() {
             left: "19px",
             width: "2px",
             height: "calc(100% - 40px)",
-            background: "#1A3048",
+            background: "#E2E8F0",
           }} />
 
           {steps.map((step, i) => (
@@ -201,8 +159,8 @@ export default function HowItWorks() {
                 width: "40px",
                 height: "40px",
                 borderRadius: "9999px",
-                background: "#0D1B2A",
-                border: "1px solid #1A3048",
+                background: "#EEF4FF",
+                border: "1px solid rgba(0,99,255,0.2)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -214,26 +172,30 @@ export default function HowItWorks() {
                   fontFamily: "'DM Mono', monospace",
                   fontSize: "0.72rem",
                   fontWeight: 700,
-                  color: "#77A7DF",
+                  color: "#0063FF",
                 }}>
                   {i + 1}
                 </span>
               </div>
 
               {/* Content card */}
-              <div style={{
-                background: "#0D1B2A",
-                border: "1px solid #1A3048",
-                borderRadius: "1rem",
-                padding: "1.5rem",
-                flex: 1,
-                transition: "border-color 0.2s ease",
-              }}
+              <div
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid #E2E8F0",
+                  borderRadius: "1rem",
+                  padding: "1.5rem",
+                  flex: 1,
+                  transition: "border-color 0.2s ease, box-shadow 0.2s ease",
+                  boxShadow: "0 1px 4px rgba(0,0,0,0.04)",
+                }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#1E3A5F";
+                  e.currentTarget.style.borderColor = "rgba(0,99,255,0.3)";
+                  e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,99,255,0.08)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "#1A3048";
+                  e.currentTarget.style.borderColor = "#E2E8F0";
+                  e.currentTarget.style.boxShadow = "0 1px 4px rgba(0,0,0,0.04)";
                 }}
               >
                 {/* Tag + step */}
@@ -246,22 +208,17 @@ export default function HowItWorks() {
                   <span style={{
                     fontSize: "0.62rem",
                     fontWeight: 700,
-                    color: "#506A84",
+                    color: "#9CA3AF",
                     fontFamily: "'DM Mono', monospace",
                     letterSpacing: "0.08em",
                   }}>
                     STEP {step.number}
                   </span>
-                  <div style={{
-                    width: "3px",
-                    height: "3px",
-                    borderRadius: "9999px",
-                    background: "#506A84",
-                  }} />
+                  <div style={{ width: "3px", height: "3px", borderRadius: "9999px", background: "#D1D5DB" }} />
                   <span style={{
                     fontSize: "0.62rem",
                     fontWeight: 700,
-                    color: "#506A84",
+                    color: "#9CA3AF",
                     fontFamily: "'DM Sans', sans-serif",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
@@ -270,11 +227,10 @@ export default function HowItWorks() {
                   </span>
                 </div>
 
-                {/* Title */}
                 <h3 style={{
                   fontSize: "1rem",
                   fontWeight: 700,
-                  color: "#E8F4FD",
+                  color: "#111827",
                   marginBottom: "0.5rem",
                   lineHeight: 1.3,
                   fontFamily: "'DM Sans', sans-serif",
@@ -282,10 +238,9 @@ export default function HowItWorks() {
                   {step.title}
                 </h3>
 
-                {/* Desc */}
                 <p style={{
                   fontSize: "0.85rem",
-                  color: "#8BA8C8",
+                  color: "#4B5563",
                   lineHeight: 1.75,
                   fontFamily: "'DM Sans', sans-serif",
                   margin: 0,
@@ -297,60 +252,52 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* ── Bottom CTA ── */}
-        <div
-          style={{
-            marginTop: "3.5rem",
-            background: "#0D1B2A",
-            border: "1px solid #1A3048",
-            borderRadius: "1.25rem",
-            padding: "2rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "1.5rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <div>
-            <div style={{
-              fontSize: "1rem",
-              fontWeight: 700,
-              color: "#E8F4FD",
-              marginBottom: "0.375rem",
+        {/* Bottom links */}
+        <div style={{
+          marginTop: "3rem",
+          paddingTop: "2rem",
+          borderTop: "1px solid #F3F4F6",
+          display: "flex",
+          alignItems: "center",
+          gap: "1.5rem",
+          flexWrap: "wrap",
+        }}>
+          <Link
+            href="/partners"
+            className="btn-primary"
+            style={{ fontSize: "0.875rem" }}
+          >
+            List Your Parking Area
+          </Link>
+          <Link
+            href="#contact"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              padding: "0.625rem 1.25rem",
+              borderRadius: "0.625rem",
+              border: "1.5px solid #0063FF",
+              background: "#FFFFFF",
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              color: "#0063FF",
+              textDecoration: "none",
               fontFamily: "'DM Sans', sans-serif",
-            }}>
-              Ready to get started?
-            </div>
-            <div style={{
-              fontSize: "0.85rem",
-              color: "#8BA8C8",
-              fontFamily: "'DM Sans', sans-serif",
-            }}>
-              No setup fee. No hardware. Just download and start.
-            </div>
-          </div>
-          <div style={{
-            display: "flex",
-            gap: "0.75rem",
-            flexWrap: "wrap",
-          }}>
-            <a
-              href="https://play.google.com/store"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Download App
-            </a>
-            <Link
-              href="/partners"
-              className="btn-secondary"
-            >
-              Learn More
-            </Link>
-          </div>
+              transition: "background 0.2s ease, color 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#0063FF";
+              e.currentTarget.style.color = "#FFFFFF";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "#FFFFFF";
+              e.currentTarget.style.color = "#0063FF";
+            }}
+          >
+            Contact Us
+          </Link>
         </div>
+
       </div>
 
       <style>{`
@@ -358,6 +305,9 @@ export default function HowItWorks() {
           .hiw-header {
             grid-template-columns: 1fr 1fr !important;
           }
+        }
+        @media (max-width: 1023px) {
+          .hiw-summary { display: none !important; }
         }
       `}</style>
     </section>
