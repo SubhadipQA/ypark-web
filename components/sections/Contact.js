@@ -59,7 +59,14 @@ export default function Contact() {
   const [errMsg, setErrMsg] = useState("");
 
   function handleChange(e) {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    if (name === "phone") {
+      // Allow only digits, max 10
+      const digits = value.replace(/\D/g, "").slice(0, 10);
+      setForm((prev) => ({ ...prev, phone: digits }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   }
 
   async function handleSubmit(e) {
@@ -371,8 +378,10 @@ export default function Contact() {
                     <input
                       name="phone"
                       type="tel"
-                      placeholder="+91 00000 00000"
+                      placeholder="10 digit number"
                       required
+                      maxLength={10}
+                      pattern="[0-9]{10}"
                       value={form.phone}
                       onChange={handleChange}
                       className="input"

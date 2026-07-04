@@ -2,6 +2,7 @@ import { connectDB } from "@/lib/mongodb";
 import Contact from "@/lib/models/Contact";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex = /^[0-9]{10}$/;
 
 export async function POST(request) {
   try {
@@ -19,6 +20,13 @@ export async function POST(request) {
     if (!emailRegex.test(email)) {
       return Response.json(
         { error: "Please enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    if (!phoneRegex.test(phone.trim())) {
+      return Response.json(
+        { error: "Please enter a valid 10-digit phone number." },
         { status: 400 }
       );
     }
