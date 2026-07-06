@@ -1,0 +1,31 @@
+# Y-PARK
+> India's organized parking platform. Connecting parking zone owners and drivers through one digital system.
+
+Y-PARK is a product of Prothom Analytica India Pvt. Ltd., based in Kolkata, West Bengal, India.
+
+## What is Y-PARK?
+Y-PARK is the operating system for parking zones in India — government authorized street bays and private compounds. It replaces paper registers and manual cash collection with a clean digital platform for entries, passes, staff management, and revenue tracking.
+
+## Products
+- **Y-PARK** — Mobile app for single parking zone owners. Manage entries, exits, monthly passes, staff activity, and daily collections.
+- **Y-PARK Partners** — For vehicle owners and drivers to find and book parking zones.
+- **Y-PARK Admin** — Enterprise dashboard for multi-zone operators, parking companies, and government/municipal bodies managing multiple zones across a city.
+
+## Pages
+- Homepage: https://ypark.in/
+- For Partners: https://ypark.in/partners
+- Y-PARK Admin: https://ypark.in/yadmin
+- Privacy Policy: https://ypark.in/privacy
+- Terms of Service: https://ypark.in/terms
+- Cookie Policy: https://ypark.in/cookie-policy
+
+## Company
+Prothom Analytica India Pvt. Ltd.
+Website: https://prothomai.com
+Location: Kolkata, West Bengal, India
+Contact: hello@prothomai.com
+
+## Social
+- LinkedIn: https://linkedin.com/company/prothom-analytica-india
+- Instagram: https://instagram.com/ypark.in
+- YouTube: https://youtube.com/@ypark
